@@ -1,0 +1,22 @@
+{
+  "name": "realworld",
+  "version": "1.0.0",
+  "description": "fork of realworld app to add e2e tests",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "run-s ci:client ci:server",
+    "ci:client": "cd client && npm ci",
+    "ci:server": "cd server && npm ci",
+    "build": "cd client && npm run build",
+    "start": "concurrently npm:start:client npm:start:server",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
