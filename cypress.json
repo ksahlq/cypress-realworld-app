@@ -1,4 +1,7 @@
 {
     "baseUrl": "http://localhost:4100",
+    "env": {
+        "apiUrl": "http://localhost:3000"
+    },    
     "video": false
 }
