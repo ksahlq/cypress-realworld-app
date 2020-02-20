@@ -23,3 +23,26 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+const apiUrl = Cypress.env('apiUrl')
+
+Cypress.Commands.add('login', (user = Cypress.env('user')) => {
+    cy.getLoginToken(user).then(token => {
+        localStorage.setItem('jwt', token)
+    })
+
+    cy.visit('/')
+    // TODO add cy-data attribute to "Your Feed". Then use that to assert if we are logged in
+})
+
+Cypress.Commands.add('getLoginToken', (user = Cypress.env('user')) => {
+    return cy.request({
+            method: "POST",
+            url: `${apiUrl}/api/users/login`,
+            body: {
+                user: Cypress._.pick(user, ['email', 'password'])
+            }            
+        })
+        .its('body.user.token')
+        .should('exist')
+})
