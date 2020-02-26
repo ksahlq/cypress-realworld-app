@@ -1,14 +1,15 @@
 {
-    "baseUrl": "http://localhost:4100",
+    "baseUrl": "http://localhost:4400",
     "env": {
-        "apiUrl": "http://localhost:3000",
+        "apiUrl": "http://localhost:2000",
         "user": {
-            "email": "ibrahim@login.login",
-            "password": "1234",
+            "email": "Osman@login.login",
+            "password": "5432",
             "username": "Ibba"
         }
     },
     "viewportWidth": 1000,
     "viewportHeight": 660,    
-    "video": false
+    "video": false,
+    "nodeVersion": "system"
 }

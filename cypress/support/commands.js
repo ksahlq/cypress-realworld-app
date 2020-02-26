@@ -32,7 +32,7 @@ Cypress.Commands.add('login', (user = Cypress.env('user')) => {
     })
 
     cy.visit('/')
-    // TODO add cy-data attribute to "Your Feed". Then use that to assert if we are logged in
+    // TODO add data-cy attribute to "Your Feed". Then use that to assert if we are logged in
 })
 
 Cypress.Commands.add('getLoginToken', (user = Cypress.env('user')) => {

@@ -11,10 +11,10 @@
     "start": "concurrently npm:start:client npm:start:server",
     "start:client": "cd client && npm start",
     "start:server": "cd server && npm run dev",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run --spec cypress/integration/localhost/**/*.js",
-    "cy:dev": "start-server-and-test start http://localhost:4100 cy:open",    
-    "cy:run:local": "start-server-and-test start http://localhost:4100 cy:run"
+    "cy:open": "cypress open --env configFile=dev",
+    "cy:run": "cypress run --env configFile=dev --spec cypress/integration/localhost/**/*.js",
+    "cy:open:dev": "start-server-and-test start http://localhost:4100 cy:open",    
+    "cy:dev": "start-server-and-test start http://localhost:4100 cy:run"
   },
   "author": "",
   "license": "ISC",
