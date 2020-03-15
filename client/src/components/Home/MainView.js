@@ -15,6 +15,7 @@ const YourFeedTab = props => {
       <li className="nav-item">
         <a  href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
+            data-cy="your-feed"
             onClick={clickHandler}>
           Your Feed
         </a>

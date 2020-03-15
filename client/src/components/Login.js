@@ -64,6 +64,7 @@ class Login extends React.Component {
                       type="email"
                       placeholder="Email"
                       value={email}
+                      data-cy="email"
                       onChange={this.changeEmail} />
                   </fieldset>
 
@@ -73,12 +74,14 @@ class Login extends React.Component {
                       type="password"
                       placeholder="Password"
                       value={password}
+                      data-cy="password"
                       onChange={this.changePassword} />
                   </fieldset>
 
                   <button
                     className="btn btn-lg btn-primary pull-xs-right"
                     type="submit"
+                    data-cy="submit"
                     disabled={this.props.inProgress}>
                     Sign in
                   </button>
